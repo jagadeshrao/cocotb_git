@@ -64,7 +64,7 @@ begin
     (
     reset_level => '0', -- reset level which causes a reset
     clk_freq    => 100_000_000, -- oscillator frequency
-    baud_rate   => 115200 -- baud rate
+    baud_rate   => 19200 -- baud rate
     )
     port map
     (
