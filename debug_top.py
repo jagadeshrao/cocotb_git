@@ -22,8 +22,8 @@ async def run_test(dut):
     await reset_dut(dut.reset, 50)
     dut._log.debug("After reset")
     await Timer(500*PERIOD, units='ns')
-    uart_source = UartSource(dut.rx, baud=115200, bits=8,stop_bits=4)
-    uart_sink = UartSink(dut.tx, baud=115200, bits=8)
+    uart_source = UartSource(dut.rx, baud=19200, bits=8,stop_bits=4)
+    uart_sink = UartSink(dut.tx, baud=19200, bits=8)
     axi_master = AxiLiteRam(AxiLiteBus.from_prefix(dut, "axi"), dut.clk, dut.reset, size=2**16)
     dut._log.info("Running test 1")
     data_uart = [0x09,0xC0, 0x00, 0x00, 0x00,0x01,0x55,0xaa,0x12,0x34]
